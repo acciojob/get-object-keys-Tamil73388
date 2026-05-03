@@ -3,12 +3,9 @@ let student = {
 };
 
 function getKeys(obj) {
-	ans=[]
-	for(let x in obj){
-		ans.push(x)
-	}
-		return ans
-	
+  // Use the specific method required by the constraints
+  return Object.keys(obj);
 }
 
+// Ensure you are calling it exactly as the example shows
 console.log(getKeys(student));
