@@ -1,18 +1,13 @@
-
+// The object provided in the problem
 const student = {
-  "name": "John"
+  name: "John Doe"
 };
 
-function getKeys(obj) {
-  let keys = [];
-  for (let key in obj) {
-    // hasOwnProperty ensures you only get the object's own 
-    // properties, not those from the prototype chain
-    if (obj.hasOwnProperty(key)) {
-      keys.push(key);
-    }
-  }
-  return keys;
-}
+// You need to add the getKeys method to the Object prototype
+Object.prototype.getKeys = function() {
+  // 'this' refers to the object calling the method (e.g., student)
+  return Object.keys(this);
+};
 
-console.log(getKeys(student)); 
+// The platform will likely test it like this:
+// console.log(student.getKeys());
